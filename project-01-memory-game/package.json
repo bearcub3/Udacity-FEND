@@ -1,0 +1,21 @@
+{
+  "name": "project-01-memory-game",
+  "version": "1.0.0",
+  "description": "Udacity Front-end Developer Project using HTML, CSS, and JS",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass -o css scss/main.scss -w"
+  },
+  "keywords": [
+    "Udacity",
+    "Front-end",
+    "Developer",
+    "Memory",
+    "Game"
+  ],
+  "author": "Go-Un Shin",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.scss": "^0.1.0"
+  }
+}
