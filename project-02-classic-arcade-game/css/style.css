@@ -1,5 +1,8 @@
 body {
     text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
 ul {
@@ -8,5 +11,12 @@ ul {
 
 li {
     display: inline-block;
-    margin-right: 100px;
+    margin-right: 50px;
+    font-size: 0.8em;
+    color: green;
+    text-align: center;
+}
+
+li > span {
+    color: red;
 }
