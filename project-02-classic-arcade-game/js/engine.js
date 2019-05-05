@@ -103,7 +103,7 @@ var Engine = (function(global) {
         ];
 
         const selector = {
-            sprite: 'images/selector.png',
+            sprite: 'images/Selector.png',
             // the initial position of the selector
             row: 3,
             col: 2
@@ -344,7 +344,8 @@ var Engine = (function(global) {
             ],
             numRows = 6,
             numCols = 5,
-            row, col;
+            row,
+            col;
 
         // Before drawing, clear existing canvas
         ctx.clearRect(0,0,canvas.width,canvas.height);
