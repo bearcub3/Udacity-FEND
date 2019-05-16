@@ -25,18 +25,18 @@ $(function() {
             let feedUrl;
             for(let feed of allFeeds){
                 feedUrl = feed.url;
-            }
-            expect(feedUrl).toBeDefined();
-            expect(feedUrl.length).toBeGreaterThan(0);  
+                expect(feedUrl).toBeDefined();
+                expect(feedUrl.length).toBeGreaterThan(0);
+            }  
         });
 
         it('has its name', function() {
             let feedName;
             for(let feed of allFeeds){
                 feedName = feed.name;
+                expect(feedName).toBeDefined();
+                expect(feedName.length).toBeGreaterThan(0);
             }
-            expect(feedName).toBeDefined();
-            expect(feedName.length).toBeGreaterThan(0);
         });
     });
 
