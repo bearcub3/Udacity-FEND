@@ -184,7 +184,7 @@ createRestaurantHTML = (restaurant) => {
   image.alt = DBHelper.imageExpForRestaurant(restaurant);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.id = `restaurant-name-${this.feedSize}`;
   name.innerHTML = restaurant.name;
   li.setAttribute('aria-labelledby', name.id);
