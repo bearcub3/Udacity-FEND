@@ -9,6 +9,17 @@ var markers = [];
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+            .register('./sw.js')
+            .then(function(reg){
+              console.log('Service Worker Registered, scope :', reg.scope);
+            })
+            .catch(function(error){
+              console.log('Service Worker Registration failed', error);
+            });
+  }
+
   initMap(); // added 
   fetchNeighborhoods();
   fetchCuisines();
@@ -218,6 +229,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 
 } 
+
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
@@ -228,33 +240,3 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
-
-
-function IndexController(container) {
-  this._container = container;
-  this._registerServiceWorker();
-}
-
-IndexController.prototype._registerServiceWorker = function() {
-  // Offline Web App
-  if('serviceWorker' in navigator) {
-
-    const indexController = this;
-
-    navigator.serviceWorker
-            .register('/sw.js')
-            .then(function(reg){
-              if(!navigator.serviceWorker.controller) {
-                return;
-              }
-            });
-
-            let refreshing;
-
-            navigator.serviceWorker.addEventListener('controllerchange', function() {
-              if(refreshing) return;
-              window.location.reload();
-              refreshing = true;
-            });
-  } else return;
-}
