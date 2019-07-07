@@ -11,7 +11,7 @@ var markers = [];
 document.addEventListener('DOMContentLoaded', (event) => {
   if('serviceWorker' in navigator) {
     navigator.serviceWorker
-            .register('./sw.js')
+            .register('/sw.js')
             .then(function(reg){
               console.log('Service Worker Registered, scope :', reg.scope);
             })
